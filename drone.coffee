@@ -1,16 +1,30 @@
 arDrone = require 'ar-drone'
-client = arDrone.createClient()
 
-# Console.log all nav data
-# client.on 'navdata', console.log
+# Socket server
+{Server} = require 'ws'
+wss = new Server 
+	port: 8080
 
-# Blink some lights
-client.animateLeds('snakeGreenRed', 5, 1)
+wss.on 'connection', (ws) ->
+	console.log 'new client connected'
 
-stream = client.getPngStream()
+	setInterval =>
+		ws.send 'hiethan'
+	, 1000
 
-stream.on 'data', (png) ->
-	console.log png
+# client = arDrone.createClient()
+
+# # Console.log all nav data
+# # client.on 'navdata', console.log
+
+# # Blink some lights
+# client.animateLeds('snakeGreenRed', 5, 1)
+
+# stream = client.getPngStream()
+
+# stream.on 'data', (png) ->
+# 	console.log png
+
 
 # client.takeoff()
 
@@ -23,3 +37,5 @@ stream.on 'data', (png) ->
 # .after 5000, ->
 # 	@stop()
 # 	@land()
+
+
