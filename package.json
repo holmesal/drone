@@ -1,0 +1,26 @@
+{
+  "name": "drone",
+  "version": "0.0.0",
+  "description": "The MTNLAB drone",
+  "main": "drone.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:holmesal/drone.git"
+  },
+  "keywords": [
+    "drone",
+    "oculus"
+  ],
+  "author": "Alonso Holmes at MTNLAB",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/holmesal/drone/issues"
+  },
+  "homepage": "https://github.com/holmesal/drone",
+  "dependencies": {
+    "ar-drone": "^0.3.1"
+  }
+}
